@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Acme",
+    "description": "We make a lot of inventions.",
+    "website": "acmesolutions.com",
+    "companySize": "1000",
+    "yearFounded": "1960",
+    "CompanyTypeId": 1,
+    "IndustryTypeId": 1
+  }
+]
