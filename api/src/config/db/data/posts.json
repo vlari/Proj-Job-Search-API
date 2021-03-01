@@ -1,0 +1,18 @@
+[
+  {
+    "jobFunctionName": "Digital Marketing Coordinator - job post",
+    "description": "Create and implement digital marketing campaigns that effectively share the organization’s story and highlight seasonal cornerstone and fundraising events.",
+    "CompanyId": 1,
+    "JobTypeId": 1,
+    "ExperienceLevelId": 1,
+    "PostDetailId": 1
+  },
+  {
+    "jobFunctionName": "Marketing Operations Manager - job post",
+    "description": "Looking for a talented Marketing Ops Manager to help take the marketing operations function to the next level.",
+    "CompanyId": 1,
+    "JobTypeId": 2,
+    "ExperienceLevelId": 3,
+    "PostDetailId": 2
+  }
+]

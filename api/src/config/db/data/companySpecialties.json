@@ -1,0 +1,10 @@
+[
+    {
+        "CompanyId": 1,
+        "SpecialtyId": 1
+    },
+    {
+        "CompanyId": 1,
+        "SpecialtyId": 2
+    }
+]

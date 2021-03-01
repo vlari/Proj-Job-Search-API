@@ -1,12 +1,12 @@
+const jobTypeDataService = require('./jobTypeDataService');
 const responseService = require('../../../services/responseService');
-const tagDataService = require('./tagDataService');
 const { sendJsonResponse, sendErrorResponse } = responseService;
 
-exports.getTags = async (req, res, next) => {
+exports.getJobTypes = async (req, res, next) => {
   try {
-    const tags = await tagDataService.getAll();
+    const jobTypes = await jobTypeDataService.getAll();
 
-    sendJsonResponse(200, tags, res);
+    sendJsonResponse(200, jobTypes, res);
   } catch (error) {
     next(sendErrorResponse(500, error));
   }

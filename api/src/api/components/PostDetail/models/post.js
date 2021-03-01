@@ -1,6 +1,9 @@
 const sequelize = require('../../../../config/db/db');
 const { DataTypes } = require('sequelize');
 const Company = require('../../Company/models/company');
+const PostDetail = require('./postDetail');
+const JobType = require('../../JobType/jobType');
+const ExperienceLevel = require('../../ExperienceLevel/experienceLevel');
 
 const Post = sequelize.define('Post', {
   id: {
@@ -21,5 +24,14 @@ const Post = sequelize.define('Post', {
 
 Company.hasMany(Post);
 Post.belongsTo(Company);
+
+PostDetail.hasOne(Post);
+Post.belongsTo(PostDetail);
+
+JobType.hasMany(Post);
+Post.belongsTo(JobType);
+
+ExperienceLevel.hasMany(Post);
+Post.belongsTo(ExperienceLevel);
 
 module.exports = Post;

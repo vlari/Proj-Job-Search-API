@@ -3,7 +3,7 @@
     "address": "[100 - 198] W Leopold St, Marine, IL 62061, US",
     "city": "Marine",
     "country": "USA",
-    "companyId": "1",
+    "CompanyId": 1,
     "lat": "-89.778166",
     "lng": "38.793742"
   }

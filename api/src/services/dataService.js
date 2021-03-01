@@ -3,7 +3,7 @@ class DataService {
     this.model = model;
   }
 
-  async getAll(query = {}) {
+  async getAll() {
     try {
       const result = await this.model.findAll({});
 
@@ -17,10 +17,17 @@ class DataService {
     try {
       const startIndex = (page - 1) * limit;
       const endIndex = page * limit;
+      const { filter = {}, options = {} } = query;
 
-      query = { ...query, offset: startIndex, limit };
+      const dbOptions = {
+        ...options,
+        offset: startIndex,
+        limit,
+      };
 
-      const { rows, count } = await this.model.findAndCountAll(query);
+      const dbQuery = getValidFileter(dbOptions, filter);
+
+      const { rows, count } = await this.model.findAndCountAll(dbQuery);
 
       const pagination = {};
 
@@ -59,6 +66,29 @@ class DataService {
   async update(id, resource) {}
 
   async remove(id) {}
+}
+
+function getValidFileter(options, dbFilter) {
+  if (dbFilter === null || options === null) {
+    return {};
+  }
+
+  const filters = {};
+
+  for (let key in dbFilter) {
+    if (dbFilter[key]) {
+      filters[key] = dbFilter[key];
+    }
+  }
+
+  let result;
+  if (Object.keys(filters).length > 0) {
+    result = { where: { ...filters }, ...options };
+  } else {
+    result = options;
+  }
+
+  return result;
 }
 
 module.exports = DataService;

@@ -7,6 +7,8 @@ const tagRoutes = require('./components/Tag/routes');
 const sessionRoutes = require('./components/Session/sessionRoutes');
 const accountRoutes = require('./components/Account/routes');
 const companyRoutes = require('./components/Company/routes');
+const jobTypeRoutes = require('./components/JobType/routes');
+const ExperienceLevelRoutes = require('./components/ExperienceLevel/routes');
 
 const router = express.Router();
 
@@ -18,5 +20,7 @@ router.use('/tags', tagRoutes);
 router.use('/auth', sessionRoutes);
 router.use('/accounts', accountRoutes);
 router.use('/companies', companyRoutes);
+router.use('/jobtypes', jobTypeRoutes);
+router.use('/experiencelevels', ExperienceLevelRoutes);
 
 module.exports = router;

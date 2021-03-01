@@ -1,6 +1,5 @@
 const sequelize = require('../../../../config/db/db');
 const { DataTypes } = require('sequelize');
-const Post = require('./post');
 
 const PostDetail = sequelize.define('PostDetail', {
   id: {
@@ -17,13 +16,6 @@ const PostDetail = sequelize.define('PostDetail', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  seniorityLevel: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
 });
-
-Post.hasOne(PostDetail);
-PostDetail.belongsTo(Post);
 
 module.exports = PostDetail;

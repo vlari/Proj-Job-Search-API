@@ -1,1 +1,1 @@
-# Proj-Job-Search-API
+# Proj-Job-Search-App
